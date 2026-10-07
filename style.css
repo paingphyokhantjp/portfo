@@ -1,0 +1,269 @@
+/* Change these to restyle the whole page */
+:root {
+  --ink: #0d0d12;
+  --ink2: #15151d;
+  --text: #fdfcfa;
+  --mute: #a3a3b5;
+  --gold: #c9a84c;
+  --gold-soft: #e8c97a;
+  --line: rgba(255, 255, 255, 0.1);
+  --serif: "Playfair Display", "Shippori Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  --sans: "Outfit", "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* ---------- Nav ---------- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 40px;
+  background: rgba(13, 13, 18, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.logo span { color: var(--gold); }
+
+.links {
+  display: flex;
+  gap: 22px;
+  margin-left: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.links::-webkit-scrollbar { display: none; }
+
+.links a {
+  color: var(--mute);
+  text-decoration: none;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s;
+}
+.links a:hover { color: var(--text); }
+.links a.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+button {
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--gold);
+  background: none;
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  padding: 4px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+button:hover { background: var(--gold); color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 120px 40px 64px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.hello { color: var(--gold); margin-bottom: 8px; }
+
+h1 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.role { color: var(--mute); margin-bottom: 20px; }
+.lead { max-width: 30em; margin-bottom: 14px; }
+.for { color: var(--mute); font-size: 0.92rem; margin-bottom: 32px; }
+
+.actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 11px 28px;
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--gold-soft); }
+.btn.ghost { background: none; color: var(--text); border-color: rgba(255, 255, 255, 0.25); }
+.btn.ghost:hover { border-color: var(--gold); background: none; }
+
+.photo { position: relative; justify-self: center; width: min(100%, 320px); }
+.photo::before {
+  content: "";
+  position: absolute;
+  inset: 14px -14px -14px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+}
+.photo img {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 78%;
+  border-radius: 4px;
+}
+
+/* ---------- Sections ---------- */
+main { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+
+section {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  padding: 72px 0;
+  border-top: 1px solid var(--line);
+}
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 1.25;
+  align-self: start;
+  position: sticky;
+  top: 96px;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: var(--gold);
+  margin-top: 14px;
+}
+
+.body { max-width: 40em; }
+.body p { color: rgba(253, 252, 250, 0.78); margin-bottom: 18px; }
+.body p:last-child { margin-bottom: 0; }
+
+dl { display: grid; grid-template-columns: 130px 1fr; gap: 10px 20px; margin-bottom: 22px; }
+dt { color: var(--gold); }
+dd { color: rgba(253, 252, 250, 0.78); }
+.skills { margin-bottom: 0; }
+.skills dt { color: var(--text); font-weight: 400; }
+
+.wide {
+  display: block;
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  object-position: 50% 76%;
+  border-radius: 4px;
+  margin-bottom: 22px;
+}
+
+.mail { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 24px !important; }
+.mail a {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--gold);
+  text-decoration-color: rgba(201, 168, 76, 0.4);
+  text-underline-offset: 5px;
+}
+
+footer {
+  text-align: center;
+  color: var(--mute);
+  font-size: 0.88rem;
+  padding: 32px 20px 40px;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 800px) {
+  nav { padding: 12px 18px; gap: 14px; }
+  .logo { display: none; }
+  .hero { grid-template-columns: 1fr; gap: 48px; padding: 96px 22px 48px; min-height: auto; }
+  .photo { order: -1; width: min(70%, 260px); justify-self: start; }
+  main { padding: 0 22px; }
+  section { grid-template-columns: 1fr; gap: 20px; padding: 52px 0; }
+  h2 { position: static; }
+  dl { grid-template-columns: 1fr; gap: 0; }
+  dd { margin-bottom: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Photo hover effect ---------- */
+.photo { perspective: 800px; }
+.photo img { transition: transform 0.2s ease-out; }
+.photo::before { transition: transform 0.3s ease; }
+.photo:hover::before { transform: translate(-8px, -8px); }
+
+/* ---------- Hover effects: buttons and Why TOMATO ---------- */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  /* buttons: Get in touch, Why TOMATO, Send me an email, Copy, language */
+  .btn, button { transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s, color 0.2s; }
+  .btn:hover, button:hover { transform: translateY(-3px); }
+  .btn:hover { box-shadow: 0 10px 24px rgba(201, 168, 76, 0.28); }
+  .btn.ghost:hover { box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45); }
+  .btn:active, button:active { transform: translateY(0); }
+
+  /* Why TOMATO section: the text slides in, the gold bar lights up and grows */
+  #why .body p {
+    padding-left: 20px;
+    border-left: 2px solid var(--line);
+    transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  #why:hover .body p {
+    transform: translateX(8px);
+    border-left-color: var(--gold);
+    color: var(--text);
+  }
+  h2::after { transition: width 0.3s ease; }
+  #why:hover h2::after { width: 72px; }
+}
+
+/* ---------- Japanese line breaks: keep words like エンジニア together ---------- */
+:lang(ja) .body p,
+:lang(ja) .lead,
+:lang(ja) dd {
+  word-break: auto-phrase;
+  line-break: strict;
+  text-wrap: pretty;
+}

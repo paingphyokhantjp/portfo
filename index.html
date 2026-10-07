@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Paing Phyo Khant | Portfolio for TOMATO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500&family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="#top">Paing<span>.</span></a>
+    <div class="links">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#why" data-i18n="nav_why">TOMATO</a>
+      <a href="#school" data-i18n="nav_school">School</a>
+      <a href="#skills" data-i18n="nav_skills">Skills</a>
+      <a href="#strengths" data-i18n="nav_strengths">Strengths</a>
+      <a href="#hobby" data-i18n="nav_hobby">Hobby</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </div>
+    <button id="lang" type="button">日本語</button>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="hero-text">
+      <p class="hello" data-i18n="hello">Hi, I'm Paing.</p>
+      <h1>Paing Phyo Khant</h1>
+      <p class="role" data-i18n="role">Aspiring system engineer · Yokohama, Japan</p>
+      <p class="lead" data-i18n="intro">I'm studying to become a system engineer in Japan. I like building software that people can use without getting lost.</p>
+      <p class="for" data-i18n="for">Portfolio prepared for TOMATO 株式会社</p>
+      <div class="actions">
+        <a class="btn" href="#contact" data-i18n="btn_contact">Get in touch</a>
+        <a class="btn ghost" href="#why" data-i18n="btn_why">Why TOMATO</a>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="intro_picture.jpg" alt="Paing Phyo Khant" onerror="this.closest('.photo').remove()">
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2 data-i18n="nav_about">About</h2>
+      <div class="body">
+        <p data-i18n="about1">I'm Paing Phyo Khant, from Myanmar and now living in Yokohama. After language school in Tokyo, I started at Nihon Kogakuin College, where I'm studying to become a system engineer. I graduate in March 2027.</p>
+        <p data-i18n="about2">What got me into engineering was the inventory system at my part-time job. I watched mistakes drop and the work run more smoothly, and I felt how much a good system can help. Now I want to be the person who builds systems that people can use without getting lost.</p>
+      </div>
+    </section>
+
+    <section id="why">
+      <h2 data-i18n="why_title">Why TOMATO</h2>
+      <div class="body">
+        <p data-i18n="why1">I want to build systems that support the people who work on the front line, so that anyone can use them without getting lost. That is why I applied to TOMATO. I first became interested in engineering when I used an inventory system at my part-time job and saw how much it improved work efficiency.</p>
+        <p data-i18n="why2">At college I'm learning Java, Python and system design, and I'm drawn to developing from the user's point of view. I was strongly attracted that TOMATO builds a wide range of business systems, including web systems and logistics, and cares about training its people and their technical growth.</p>
+        <p data-i18n="why3">I will use my ability to read the situation around me and act, and in the future I want to contribute as an engineer who builds systems that users love for a long time.</p>
+      </div>
+    </section>
+
+    <section id="school">
+      <h2 data-i18n="nav_school">School</h2>
+      <div class="body">
+        <dl class="timeline">
+          <dt>2025 – 2027</dt><dd data-i18n="school1">Nihon Kogakuin College (expected March 2027)</dd>
+          <dt>2023 – 2025</dt><dd data-i18n="school2">Shinjuku Japanese Language School</dd>
+          <dt>2008 – 2019</dt><dd>Basic Education High School Myitchay</dd>
+        </dl>
+        <p data-i18n="school_text">At college I'm learning Java, Python and databases. My favorite class is system design: I sort out what the user needs and think about the whole picture of which screens and data are required. In class I try to make something easy to operate, not just a program that runs.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 data-i18n="nav_skills">Skills</h2>
+      <div class="body">
+        <dl class="skills">
+          <dt>Java</dt><dd data-i18n="sk_java">Learning it at college.</dd>
+          <dt>Python</dt><dd data-i18n="sk_python">Learning it at college.</dd>
+          <dt data-i18n="sk_db_t">Databases</dt><dd data-i18n="sk_db">Learning it at college.</dd>
+          <dt data-i18n="sk_design_t">System design</dt><dd data-i18n="sk_design">My favorite class. I sort out what users need, then work out which screens and data the whole system requires.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="strengths">
+      <h2 data-i18n="strengths_title">What I'm good at</h2>
+      <div class="body">
+        <p data-i18n="strengths_text">My strength is that I look at what's happening around me and act on my own. At my part-time job there were times when we ran the shop with very few people, and at busy times we called out to each other and worked together. When I judged that the register was about to get crowded, I immediately asked another staff member to help there, and I looked at the whole floor, tidying up and preparing the next task. As a result, customers didn't have to wait, even at the busiest times, and the shop ran smoothly.</p>
+      </div>
+    </section>
+
+    <section id="hobby">
+      <h2 data-i18n="hobby_title">Hobby: mountain climbing</h2>
+      <div class="body">
+        <img class="wide" src="trail.jpg" alt="Hiking on a mountain trail" onerror="this.remove()">
+        <p data-i18n="fuji1">Mountain climbing is my hobby. The first time I climbed Mt. Takao, I realized I was out of shape. So I made a bigger goal: Mt. Fuji. I ran 5 km every weekend, asked experienced climbers about gear, and planned my route carefully. I made it to the top.</p>
+        <p data-i18n="fuji2">I try to work on a project the same way: set a hard goal, prepare step by step, and finish it.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 data-i18n="nav_contact">Contact</h2>
+      <div class="body">
+        <p data-i18n="contact_text">Thank you for reading. The best way to reach me is by email.</p>
+        <p class="mail">
+          <a id="email" href="mailto:paingphyokhantjp@gmail.com">paingphyokhantjp@gmail.com</a>
+          <button id="copy" type="button" data-i18n="copy">Copy</button>
+        </p>
+        <a class="btn" href="mailto:paingphyokhantjp@gmail.com?subject=TOMATO%20application" data-i18n="btn_email">Send me an email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> Paing Phyo Khant</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

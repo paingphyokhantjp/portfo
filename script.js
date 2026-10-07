@@ -1,6 +1,3 @@
-// ---------- Language switch (English / Japanese) ----------
-// English text lives in index.html. Japanese text lives here.
-// Each element with data-i18n="key" is swapped using that key.
 const ja = {
   nav_about: "自己紹介",
   nav_why: "志望理由",
@@ -43,7 +40,6 @@ const ja = {
 const items = document.querySelectorAll("[data-i18n]");
 const langButton = document.getElementById("lang");
 
-// remember the English text so we can switch back
 items.forEach(function (el) {
   el.dataset.en = el.textContent;
 });
@@ -61,15 +57,12 @@ langButton.addEventListener("click", function () {
   setLanguage(document.documentElement.lang === "ja" ? "en" : "ja");
 });
 
-// use the language the visitor picked last time
 try {
   if (localStorage.getItem("lang") === "ja") setLanguage("ja");
 } catch (e) {}
 
-// ---------- Footer year ----------
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ---------- Copy email button ----------
 const copyButton = document.getElementById("copy");
 const email = document.getElementById("email").textContent;
 
@@ -83,7 +76,6 @@ copyButton.addEventListener("click", function () {
   });
 });
 
-// ---------- Highlight the nav link of the section you are reading ----------
 const sections = document.querySelectorAll("main section[id]");
 const links = document.querySelectorAll(".links a");
 
@@ -97,8 +89,6 @@ window.addEventListener("scroll", function () {
   });
 });
 
-// ---------- Photo moves with the mouse ----------
-// The photo tilts toward the mouse. Change 12 to make the tilt weaker or stronger.
 const photo = document.querySelector(".photo");
 const canHover = window.matchMedia("(hover: hover)").matches;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -108,7 +98,7 @@ if (photo && canHover && !reduceMotion) {
 
   photo.addEventListener("mousemove", function (e) {
     const box = photo.getBoundingClientRect();
-    const x = (e.clientX - box.left) / box.width - 0.5;   // -0.5 to 0.5
+    const x = (e.clientX - box.left) / box.width - 0.5; 
     const y = (e.clientY - box.top) / box.height - 0.5;
     photoImg.style.transform =
       "rotateY(" + x * 12 + "deg) rotateX(" + (-y * 12) + "deg) scale(1.03)";
